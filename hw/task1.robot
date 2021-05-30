@@ -12,14 +12,14 @@ Uniques are 1 2 3 5 0 -1 10 test
     col.lists should be equal    ${expec_no_dup_row}    ${no_dup_row}
 
 Min is -1 test
-    set test documentation    checks if the min value are being found correctly
+    set test documentation    checks if the min value is being found correctly
     @{sort_row}=    set variable    ${row}
     Set list values to int    ${sort_row}
     Col.sort list    ${sort_row}
     should be equal as numbers    ${sort_row}[0]    -1
 
 Max is 10 test
-    set test documentation    checks if the max value are being found correctly
+    set test documentation    checks if the max value is being found correctly
     @{sort_row}=    set variable    ${row}
     Set list values to int    ${sort_row}
     Col.sort list    ${sort_row}
@@ -27,7 +27,7 @@ Max is 10 test
     should be equal as numbers    ${sort_row}[0]    10
 
 Sum is 21 test
-    set test documentation    checks if the sum of all varables are being found correctly
+    set test documentation    checks if the sum of all varables is being found correctly
     @{sort_row}=    set variable    ${row}
     Set list values to int    ${sort_row}
     ${sum}=    convert to integer   0
