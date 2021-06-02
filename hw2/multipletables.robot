@@ -4,12 +4,15 @@ Test Teardown   Test Teardown
 Library         RequestsLibrary     WITH NAME   Req
 Library         PostgreSQLDB        WITH NAME   DB
 Library         JsonValidator
+Library         Collections     WITH NAME    Col
 *** Test Cases ***
 Check Horizontal Filtering
 
-    ${resp}      Req.GET On Session     alias    customers?      params=age=lt.21&customerid=lt.100&select=age,cust_hist(customerid)
-    Log          ${resp.json()}
+    ${expec_resp_json}=    set variable    [{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}]}, {'age': 19, 'cust_hist': []}, {'age': 20, 'cust_hist': [{'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}]}, {'age': 20, 'cust_hist': []}]
 
+    ${resp}      Req.GET On Session     alias    customers?      params=age=lt.21&customerid=lt.100&select=age,cust_hist(customerid)
+
+    should be equal as strings    ${expec_resp_json}    ${resp.json()}
 
 *** Keywords ***
 Test Setup
