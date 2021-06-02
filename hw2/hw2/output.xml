@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.2 (Python 3.8.8 on win32)" generated="20210602 22:54:26.947" rpa="false" schemaversion="2">
+<suite id="s1" name="Insertion" source="E:\PyCharm\bc2021\hw2\insertion.robot">
+<test id="s1-t1" name="Post Requests with Json Data">
+<kw name="Test Setup" type="SETUP">
+<kw name="Create Session" library="Req">
+<arg>alias</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210602 22:54:27.260" level="INFO">Creating Session using : alias=alias, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210602 22:54:27.260" endtime="20210602 22:54:27.260"/>
+</kw>
+<kw name="Connect To Postgresql" library="DB">
+<arg>hadb</arg>
+<arg>authenticator</arg>
+<arg>mysecretpassword</arg>
+<arg>localhost</arg>
+<arg>8432</arg>
+<doc>Connection to Postgres DB.</doc>
+<status status="PASS" starttime="20210602 22:54:27.260" endtime="20210602 22:54:27.338"/>
+</kw>
+<status status="PASS" starttime="20210602 22:54:27.260" endtime="20210602 22:54:27.338"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${expec_resp_json}</var>
+<arg>[{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'test'}, {'category': 6, 'categoryname': 'test'}, {'category': 7, 'categoryname': 'test'}, {'category': 8, 'categoryname': 'test'}, {'category': 9, 'categoryname': 'test'}, {'category': 10, 'categoryname': 'test'}, {'category': 11, 'categoryname': 'test'}, {'category': 12, 'categoryname': 'test'}, {'category': 13, 'categoryname': 'test'}, {'category': 14, 'categoryname': 'test'}, {'category': 15, 'categoryname': 'test'}, {'category': 16, 'categoryname': 'test'}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210602 22:54:27.338" level="INFO">${expec_resp_json} = [{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'te...</msg>
+<status status="PASS" starttime="20210602 22:54:27.338" endtime="20210602 22:54:27.338"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{params_json}</var>
+<arg>categoryname=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210602 22:54:27.338" level="INFO">&amp;{params_json} = { categoryname=test }</msg>
+<status status="PASS" starttime="20210602 22:54:27.338" endtime="20210602 22:54:27.338"/>
+</kw>
+<kw name="Patch On Session" library="Req">
+<arg>alias</arg>
+<arg>/categories</arg>
+<arg>${params_json}</arg>
+<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
+<msg timestamp="20210602 22:54:27.449" level="INFO">PATCH Request : url=http://localhost:3000/categories 
+ path_url=/categories 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=categoryname=test 
+ </msg>
+<msg timestamp="20210602 22:54:27.449" level="INFO">PATCH Response : url=http://localhost:3000/categories 
+ status=204, reason=No Content 
+ headers={'Date': 'Wed, 02 Jun 2021 19:54:26 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Range': '0-15/*'} 
+ body=None 
+ </msg>
+<status status="PASS" starttime="20210602 22:54:27.338" endtime="20210602 22:54:27.449"/>
+</kw>
+<kw name="Get On Session" library="Req">
+<var>${resp}</var>
+<arg>alias</arg>
+<arg>categories?</arg>
+<arg>params=select=*</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20210602 22:54:27.464" level="INFO">GET Request : url=http://localhost:3000/categories?select=* 
+ path_url=/categories?select=* 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210602 22:54:27.464" level="INFO">GET Response : url=http://localhost:3000/categories?select=* 
+ status=200, reason=OK 
+ headers={'Transfer-Encoding': 'chunked', 'Date': 'Wed, 02 Jun 2021 19:54:26 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Content-Range': '0-15/*', 'Content-Location': '/categories?select=%2A'} 
+ body=[{"category":1,"categoryname":"test"}, 
+ {"category":2,"categoryname":"test"}, 
+ {"category":3,"categoryname":"test"}, 
+ {"category":4,"categoryname":"test"}, 
+ {"category":5,"categoryname":"test"}, 
+ {"category":6,"categoryname":"test"}, 
+ {"category":7,"categoryname":"test"}, 
+ {"category":8,"categoryname":"test"}, 
+ {"category":9,"categoryname":"test"}, 
+ {"category":10,"categoryname":"test"}, 
+ {"category":11,"categoryname":"test"}, 
+ {"category":12,"categoryname":"test"}, 
+ {"category":13,"categoryname":"test"}, 
+ {"category":14,"categoryname":"test"}, 
+ {"category":15,"categoryname":"test"}, 
+ {"category":16,"categoryname":"test"}] 
+ </msg>
+<msg timestamp="20210602 22:54:27.464" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210602 22:54:27.449" endtime="20210602 22:54:27.464"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${expec_resp_json}</arg>
+<arg>${resp.json()}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210602 22:54:27.465" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'list'&gt;</msg>
+<status status="PASS" starttime="20210602 22:54:27.464" endtime="20210602 22:54:27.465"/>
+</kw>
+<kw name="Test Teardown" type="TEARDOWN">
+<kw name="Delete All Sessions" library="Req">
+<doc>Removes all the session objects</doc>
+<msg timestamp="20210602 22:54:27.466" level="INFO">Deleting All Sessions</msg>
+<status status="PASS" starttime="20210602 22:54:27.466" endtime="20210602 22:54:27.466"/>
+</kw>
+<kw name="Disconnect From Postgresql" library="DB">
+<doc>Close active PostgreSQL connection.
+You will have to manually open or switch to a new connection.
+Due to how ConnectionCache works, connection's index and alias are not removed from cache, so you are able to switch to
+closed connection, if it was closed with Disconnect from Postgresql. It will still remain closed though.</doc>
+<status status="PASS" starttime="20210602 22:54:27.467" endtime="20210602 22:54:27.467"/>
+</kw>
+<status status="PASS" starttime="20210602 22:54:27.465" endtime="20210602 22:54:27.467"/>
+</kw>
+<status status="PASS" starttime="20210602 22:54:27.260" endtime="20210602 22:54:27.467"/>
+</test>
+<status status="PASS" starttime="20210602 22:54:26.947" endtime="20210602 22:54:27.469"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Insertion">Insertion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
