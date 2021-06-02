@@ -1,8 +1,8 @@
 *** Settings ***
 Metadata    Автор    Шер Игорь
 Test Timeout    2s
-Test Setup      Test Setup
-Test Teardown   Test Teardown
+Suite Setup      Suite Setup
+Suite Teardown   Suite Teardown
 Resource    resource.robot
 *** Test Cases ***
 PostgreSQL POST inquiry

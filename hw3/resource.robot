@@ -20,11 +20,11 @@ ${multi_get_resp}
 Library    RequestsLibrary     WITH NAME    Req
 Library    inquiries.Inquiries       WITH NAME    Inq
 *** Keywords ***
-Test Setup
+Suite Setup
     [Timeout]    0.5s
     Inq.create session    alias       http://localhost:3000
 
-Test Teardown
+Suite Teardown
     [Timeout]    0.5s
     Inq.delete all sessions
 

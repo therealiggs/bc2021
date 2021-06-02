@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.2 (Python 3.8.8 on win32)" generated="20210603 02:06:59.123" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.2 (Python 3.8.8 on win32)" generated="20210603 02:30:13.035" rpa="false" schemaversion="2">
 <suite id="s1" name="Hw3" source="E:\PyCharm\bc2021\hw3">
 <suite id="s1-s1" name="Main" source="E:\PyCharm\bc2021\hw3\main.robot">
-<test id="s1-s1-t1" name="PostgreSQL POST inquiry">
-<kw name="Test Setup" library="resource" type="SETUP">
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Arguments: [  ]</msg>
+<kw name="Suite Setup" library="resource" type="SETUP">
+<msg timestamp="20210603 02:30:13.199" level="TRACE">Arguments: [  ]</msg>
 <kw name="Create Session" library="Inq">
 <arg>alias</arg>
 <arg>http://localhost:3000</arg>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Arguments: [ 'alias' | 'http://localhost:3000' ]</msg>
-<msg timestamp="20210603 02:06:59.296" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.296" level="INFO">Creating Session using : alias=alias, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<msg timestamp="20210603 02:06:59.296" level="DEBUG">Creating session: alias</msg>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.296"/>
+<msg timestamp="20210603 02:30:13.199" level="TRACE">Arguments: [ 'alias' | 'http://localhost:3000' ]</msg>
+<msg timestamp="20210603 02:30:13.200" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.201" level="INFO">Creating Session using : alias=alias, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg timestamp="20210603 02:30:13.201" level="DEBUG">Creating session: alias</msg>
+<msg timestamp="20210603 02:30:13.201" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.199" endtime="20210603 02:30:13.201"/>
 </kw>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.201" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.296"/>
+<status status="PASS" starttime="20210603 02:30:13.199" endtime="20210603 02:30:13.201"/>
 </kw>
+<test id="s1-s1-t1" name="PostgreSQL POST inquiry">
 <kw name="Send POST inquiry" library="resource">
 <tag>inquiry</tag>
 <tag>post</tag>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.203" level="TRACE">Arguments: [  ]</msg>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{post_json}</var>
 <arg>${post_column}=${post_msg}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Arguments: [ '${post_column}=${post_msg}' ]</msg>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Return: {'categoryname': 'test'}</msg>
-<msg timestamp="20210603 02:06:59.296" level="INFO">&amp;{post_json} = { categoryname=test }</msg>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.296"/>
+<msg timestamp="20210603 02:30:13.203" level="TRACE">Arguments: [ '${post_column}=${post_msg}' ]</msg>
+<msg timestamp="20210603 02:30:13.204" level="TRACE">Return: {'categoryname': 'test'}</msg>
+<msg timestamp="20210603 02:30:13.204" level="INFO">&amp;{post_json} = { categoryname=test }</msg>
+<status status="PASS" starttime="20210603 02:30:13.203" endtime="20210603 02:30:13.204"/>
 </kw>
 <kw name="Send Post" library="Inq">
 <arg>alias</arg>
 <arg>${post_table}</arg>
 <arg>${post_json}</arg>
-<msg timestamp="20210603 02:06:59.296" level="TRACE">Arguments: [ 'alias' | 'categories' | {'categoryname': 'test'} ]</msg>
-<msg timestamp="20210603 02:06:59.296" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.296" level="DEBUG">Starting new HTTP connection (1): localhost:3000</msg>
-<msg timestamp="20210603 02:06:59.420" level="DEBUG">http://localhost:3000 "PATCH /categories HTTP/1.1" 204 0</msg>
-<msg timestamp="20210603 02:06:59.421" level="INFO">PATCH Request : url=http://localhost:3000/categories 
+<msg timestamp="20210603 02:30:13.204" level="TRACE">Arguments: [ 'alias' | 'categories' | {'categoryname': 'test'} ]</msg>
+<msg timestamp="20210603 02:30:13.204" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.208" level="DEBUG">Starting new HTTP connection (1): localhost:3000</msg>
+<msg timestamp="20210603 02:30:13.345" level="DEBUG">http://localhost:3000 "PATCH /categories HTTP/1.1" 204 0</msg>
+<msg timestamp="20210603 02:30:13.345" level="INFO">PATCH Request : url=http://localhost:3000/categories 
  path_url=/categories 
  headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=categoryname=test 
  </msg>
-<msg timestamp="20210603 02:06:59.421" level="INFO">PATCH Response : url=http://localhost:3000/categories 
+<msg timestamp="20210603 02:30:13.345" level="INFO">PATCH Response : url=http://localhost:3000/categories 
  status=204, reason=No Content 
- headers={'Date': 'Wed, 02 Jun 2021 23:06:58 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Range': '0-15/*'} 
+ headers={'Date': 'Wed, 02 Jun 2021 23:30:12 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Range': '0-15/*'} 
  body=None 
  </msg>
-<msg timestamp="20210603 02:06:59.421" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.421"/>
+<msg timestamp="20210603 02:30:13.345" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.204" endtime="20210603 02:30:13.345"/>
 </kw>
-<msg timestamp="20210603 02:06:59.421" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.346" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.421"/>
+<status status="PASS" starttime="20210603 02:30:13.203" endtime="20210603 02:30:13.346"/>
 </kw>
 <kw name="Send GET inquiry" library="resource">
 <tag>get</tag>
 <tag>inquiry</tag>
-<msg timestamp="20210603 02:06:59.422" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.346" level="TRACE">Arguments: [  ]</msg>
 <kw name="Send Get" library="Inq">
 <var>${temp}</var>
 <arg>alias</arg>
 <arg>${post_table}</arg>
-<msg timestamp="20210603 02:06:59.423" level="TRACE">Arguments: [ 'alias' | 'categories' ]</msg>
-<msg timestamp="20210603 02:06:59.423" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.443" level="DEBUG">http://localhost:3000 "GET /categories?select=* HTTP/1.1" 200 None</msg>
-<msg timestamp="20210603 02:06:59.443" level="INFO">GET Request : url=http://localhost:3000/categories?select=* 
+<msg timestamp="20210603 02:30:13.346" level="TRACE">Arguments: [ 'alias' | 'categories' ]</msg>
+<msg timestamp="20210603 02:30:13.346" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.361" level="DEBUG">http://localhost:3000 "GET /categories?select=* HTTP/1.1" 200 None</msg>
+<msg timestamp="20210603 02:30:13.362" level="INFO">GET Request : url=http://localhost:3000/categories?select=* 
  path_url=/categories?select=* 
  headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20210603 02:06:59.444" level="INFO">GET Response : url=http://localhost:3000/categories?select=* 
+<msg timestamp="20210603 02:30:13.362" level="INFO">GET Response : url=http://localhost:3000/categories?select=* 
  status=200, reason=OK 
- headers={'Transfer-Encoding': 'chunked', 'Date': 'Wed, 02 Jun 2021 23:06:58 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Content-Range': '0-15/*', 'Content-Location': '/categories?select=%2A'} 
+ headers={'Transfer-Encoding': 'chunked', 'Date': 'Wed, 02 Jun 2021 23:30:12 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Content-Range': '0-15/*', 'Content-Location': '/categories?select=%2A'} 
  body=[{"category":1,"categoryname":"test"}, 
  {"category":2,"categoryname":"test"}, 
  {"category":3,"categoryname":"test"}, 
@@ -93,15 +93,15 @@
  {"category":15,"categoryname":"test"}, 
  {"category":16,"categoryname":"test"}] 
  </msg>
-<msg timestamp="20210603 02:06:59.444" level="TRACE">Return: &lt;Response [200]&gt;</msg>
-<msg timestamp="20210603 02:06:59.444" level="INFO">${temp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210603 02:06:59.423" endtime="20210603 02:06:59.444"/>
+<msg timestamp="20210603 02:30:13.362" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20210603 02:30:13.362" level="INFO">${temp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210603 02:30:13.346" endtime="20210603 02:30:13.362"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${get_resp}</var>
 <arg>${temp.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210603 02:06:59.445" level="TRACE">Arguments: [ [{'category': 1, 'categoryname': 'test'},
+<msg timestamp="20210603 02:30:13.363" level="TRACE">Arguments: [ [{'category': 1, 'categoryname': 'test'},
  {'category': 2, 'categoryname': 'test'},
  {'category': 3, 'categoryname': 'test'},
  {'category': 4, 'categoryname': 'test'},
@@ -117,8 +117,8 @@
  {'category': 14, 'categoryname': 'test'},
  {'category': 15, 'categoryname': 'test'},
  {'category': 16, 'categoryname': 'test'}] ]</msg>
-<msg timestamp="20210603 02:06:59.445" level="DEBUG">Keyword timeout 500 milliseconds active. 0.477 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.446" level="TRACE">Return: [{'category': 1, 'categoryname': 'test'},
+<msg timestamp="20210603 02:30:13.364" level="DEBUG">Keyword timeout 500 milliseconds active. 0.482 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.364" level="TRACE">Return: [{'category': 1, 'categoryname': 'test'},
  {'category': 2, 'categoryname': 'test'},
  {'category': 3, 'categoryname': 'test'},
  {'category': 4, 'categoryname': 'test'},
@@ -134,29 +134,29 @@
  {'category': 14, 'categoryname': 'test'},
  {'category': 15, 'categoryname': 'test'},
  {'category': 16, 'categoryname': 'test'}]</msg>
-<msg timestamp="20210603 02:06:59.446" level="INFO">${get_resp} = [{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'te...</msg>
-<status status="PASS" starttime="20210603 02:06:59.444" endtime="20210603 02:06:59.446"/>
+<msg timestamp="20210603 02:30:13.364" level="INFO">${get_resp} = [{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'te...</msg>
+<status status="PASS" starttime="20210603 02:30:13.362" endtime="20210603 02:30:13.364"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${get_resp}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20210603 02:06:59.447" level="TRACE">Arguments: [ '${get_resp}' ]</msg>
-<msg timestamp="20210603 02:06:59.447" level="INFO">${get_resp} = [{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'te...</msg>
-<msg timestamp="20210603 02:06:59.447" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.446" endtime="20210603 02:06:59.447"/>
+<msg timestamp="20210603 02:30:13.365" level="TRACE">Arguments: [ '${get_resp}' ]</msg>
+<msg timestamp="20210603 02:30:13.365" level="INFO">${get_resp} = [{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'te...</msg>
+<msg timestamp="20210603 02:30:13.365" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.365" endtime="20210603 02:30:13.365"/>
 </kw>
-<msg timestamp="20210603 02:06:59.447" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.365" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.422" endtime="20210603 02:06:59.447"/>
+<status status="PASS" starttime="20210603 02:30:13.346" endtime="20210603 02:30:13.365"/>
 </kw>
 <kw name="Validate GET response" library="resource">
 <tag>validation</tag>
-<msg timestamp="20210603 02:06:59.447" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.366" level="TRACE">Arguments: [  ]</msg>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${get_resp}</arg>
 <arg>${expec_get_resp}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20210603 02:06:59.448" level="TRACE">Arguments: [ [{'category': 1, 'categoryname': 'test'},
+<msg timestamp="20210603 02:30:13.366" level="TRACE">Arguments: [ [{'category': 1, 'categoryname': 'test'},
  {'category': 2, 'categoryname': 'test'},
  {'category': 3, 'categoryname': 'test'},
  {'category': 4, 'categoryname': 'test'},
@@ -172,71 +172,41 @@
  {'category': 14, 'categoryname': 'test'},
  {'category': 15, 'categoryname': 'test'},
  {'category': 16, 'categoryname': 'test'}] | "[{'category': 1, 'categoryname': 'test'}, {'category': 2, 'categoryname': 'test'}, {'category': 3, 'categoryname': 'test'}, {'category': 4, 'categoryname': 'test'}, {'category': 5, 'categoryname': 'test'}, {'category': 6, 'categoryname': 'test'}, {'category': 7, 'categoryname': 'test'}, {'category': 8, 'categoryname': 'test'}, {'category': 9, 'categoryname': 'test'}, {'category': 10, 'categoryname': 'test'}, {'category': 11, 'categoryname': 'test'}, {'category': 12, 'categoryname': 'test'}, {'category': 13, 'categoryname': 'test'}, {'category': 14, 'categoryname': 'test'}, {'category': 15, 'categoryname': 'test'}, {'category': 16, 'categoryname': 'test'}]" ]</msg>
-<msg timestamp="20210603 02:06:59.448" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.448" level="INFO">Argument types are:
+<msg timestamp="20210603 02:30:13.366" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.367" level="INFO">Argument types are:
 &lt;class 'list'&gt;
 &lt;type 'unicode'&gt;</msg>
-<msg timestamp="20210603 02:06:59.449" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.448" endtime="20210603 02:06:59.449"/>
+<msg timestamp="20210603 02:30:13.367" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.366" endtime="20210603 02:30:13.367"/>
 </kw>
-<msg timestamp="20210603 02:06:59.449" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.367" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.447" endtime="20210603 02:06:59.449"/>
-</kw>
-<kw name="Test Teardown" library="resource" type="TEARDOWN">
-<msg timestamp="20210603 02:06:59.449" level="TRACE">Arguments: [  ]</msg>
-<kw name="Delete All Sessions" library="Inq">
-<msg timestamp="20210603 02:06:59.449" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210603 02:06:59.449" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.450" level="INFO">Deleting All Sessions</msg>
-<msg timestamp="20210603 02:06:59.450" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.449" endtime="20210603 02:06:59.450"/>
-</kw>
-<msg timestamp="20210603 02:06:59.450" level="TRACE">Return: None</msg>
-<timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.449" endtime="20210603 02:06:59.451"/>
+<status status="PASS" starttime="20210603 02:30:13.366" endtime="20210603 02:30:13.367"/>
 </kw>
 <doc>Отправляет на PgSQL сервер POST-запрос и GET-запросом проверяет правильность внесённых данных</doc>
 <timeout value="2 seconds"/>
-<status status="PASS" starttime="20210603 02:06:59.296" endtime="20210603 02:06:59.451"/>
+<status status="PASS" starttime="20210603 02:30:13.202" endtime="20210603 02:30:13.367"/>
 </test>
 <test id="s1-s1-t2" name="PostgreSQL GET inquiry for multiple tables">
-<kw name="Test Setup" library="resource" type="SETUP">
-<msg timestamp="20210603 02:06:59.451" level="TRACE">Arguments: [  ]</msg>
-<kw name="Create Session" library="Inq">
-<arg>alias</arg>
-<arg>http://localhost:3000</arg>
-<msg timestamp="20210603 02:06:59.452" level="TRACE">Arguments: [ 'alias' | 'http://localhost:3000' ]</msg>
-<msg timestamp="20210603 02:06:59.452" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.452" level="INFO">Creating Session using : alias=alias, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<msg timestamp="20210603 02:06:59.452" level="DEBUG">Creating session: alias</msg>
-<msg timestamp="20210603 02:06:59.452" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.452" endtime="20210603 02:06:59.452"/>
-</kw>
-<msg timestamp="20210603 02:06:59.452" level="TRACE">Return: None</msg>
-<timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.451" endtime="20210603 02:06:59.452"/>
-</kw>
 <kw name="Send GET inquiry for tables" library="resource">
 <tag>get</tag>
 <tag>inquiry</tag>
-<msg timestamp="20210603 02:06:59.452" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.369" level="TRACE">Arguments: [  ]</msg>
 <kw name="Send Multi Get" library="Inq">
 <var>${temp}</var>
 <arg>alias</arg>
 <arg>@{multi_select_tables}</arg>
-<msg timestamp="20210603 02:06:59.452" level="TRACE">Arguments: [ 'alias' | 'customers' | 'cust_hist' ]</msg>
-<msg timestamp="20210603 02:06:59.452" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.452" level="DEBUG">Starting new HTTP connection (1): localhost:3000</msg>
-<msg timestamp="20210603 02:06:59.479" level="DEBUG">http://localhost:3000 "GET /customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) HTTP/1.1" 200 None</msg>
-<msg timestamp="20210603 02:06:59.479" level="INFO">GET Request : url=http://localhost:3000/customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) 
+<msg timestamp="20210603 02:30:13.369" level="TRACE">Arguments: [ 'alias' | 'customers' | 'cust_hist' ]</msg>
+<msg timestamp="20210603 02:30:13.369" level="DEBUG">Keyword timeout 500 milliseconds active. 0.5 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.390" level="DEBUG">http://localhost:3000 "GET /customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) HTTP/1.1" 200 None</msg>
+<msg timestamp="20210603 02:30:13.390" level="INFO">GET Request : url=http://localhost:3000/customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) 
  path_url=/customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) 
  headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20210603 02:06:59.479" level="INFO">GET Response : url=http://localhost:3000/customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) 
+<msg timestamp="20210603 02:30:13.390" level="INFO">GET Response : url=http://localhost:3000/customers?age=lt.21&amp;customerid=lt.100&amp;select=age,cust_hist(customerid) 
  status=200, reason=OK 
- headers={'Transfer-Encoding': 'chunked', 'Date': 'Wed, 02 Jun 2021 23:06:58 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Content-Range': '0-3/*', 'Content-Location': '/customers?age=lt.21&amp;customerid=lt.100&amp;select=age%2Ccust_hist%28customerid%29'} 
+ headers={'Transfer-Encoding': 'chunked', 'Date': 'Wed, 02 Jun 2021 23:30:12 GMT', 'Server': 'postgrest/7.0.1 (UNKNOWN)', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Content-Range': '0-3/*', 'Content-Location': '/customers?age=lt.21&amp;customerid=lt.100&amp;select=age%2Ccust_hist%28customerid%29'} 
  body=[{"age":20,"cust_hist":[{"customerid":44}, 
  {"customerid":44}, 
  {"customerid":44}, 
@@ -278,15 +248,15 @@
  {"customerid":69}]}, 
  {"age":20,"cust_hist":[]}] 
  </msg>
-<msg timestamp="20210603 02:06:59.480" level="TRACE">Return: &lt;Response [200]&gt;</msg>
-<msg timestamp="20210603 02:06:59.480" level="INFO">${temp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210603 02:06:59.452" endtime="20210603 02:06:59.480"/>
+<msg timestamp="20210603 02:30:13.391" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20210603 02:30:13.391" level="INFO">${temp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210603 02:30:13.369" endtime="20210603 02:30:13.391"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${multi_get_resp}</var>
 <arg>${temp.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210603 02:06:59.482" level="TRACE">Arguments: [ [{'age': 20,
+<msg timestamp="20210603 02:30:13.391" level="TRACE">Arguments: [ [{'age': 20,
   'cust_hist': [{'customerid': 44},
                 {'customerid': 44},
                 {'customerid': 44},
@@ -328,8 +298,8 @@
                 {'customerid': 69},
                 {'customerid': 69}]},
  {'age': 20, 'cust_hist': []}] ]</msg>
-<msg timestamp="20210603 02:06:59.482" level="DEBUG">Keyword timeout 500 milliseconds active. 0.47 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.483" level="TRACE">Return: [{'age': 20,
+<msg timestamp="20210603 02:30:13.392" level="DEBUG">Keyword timeout 500 milliseconds active. 0.476 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.393" level="TRACE">Return: [{'age': 20,
   'cust_hist': [{'customerid': 44},
                 {'customerid': 44},
                 {'customerid': 44},
@@ -371,29 +341,29 @@
                 {'customerid': 69},
                 {'customerid': 69}]},
  {'age': 20, 'cust_hist': []}]</msg>
-<msg timestamp="20210603 02:06:59.484" level="INFO">${multi_get_resp} = [{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid'...</msg>
-<status status="PASS" starttime="20210603 02:06:59.480" endtime="20210603 02:06:59.484"/>
+<msg timestamp="20210603 02:30:13.394" level="INFO">${multi_get_resp} = [{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid'...</msg>
+<status status="PASS" starttime="20210603 02:30:13.391" endtime="20210603 02:30:13.394"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${multi_get_resp}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20210603 02:06:59.484" level="TRACE">Arguments: [ '${multi_get_resp}' ]</msg>
-<msg timestamp="20210603 02:06:59.484" level="INFO">${multi_get_resp} = [{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid'...</msg>
-<msg timestamp="20210603 02:06:59.484" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.484" endtime="20210603 02:06:59.484"/>
+<msg timestamp="20210603 02:30:13.394" level="TRACE">Arguments: [ '${multi_get_resp}' ]</msg>
+<msg timestamp="20210603 02:30:13.395" level="INFO">${multi_get_resp} = [{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid'...</msg>
+<msg timestamp="20210603 02:30:13.395" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.394" endtime="20210603 02:30:13.395"/>
 </kw>
-<msg timestamp="20210603 02:06:59.484" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.395" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.452" endtime="20210603 02:06:59.485"/>
+<status status="PASS" starttime="20210603 02:30:13.368" endtime="20210603 02:30:13.395"/>
 </kw>
 <kw name="Validate multiple GET response" library="resource">
 <tag>validation</tag>
-<msg timestamp="20210603 02:06:59.485" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.395" level="TRACE">Arguments: [  ]</msg>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${multi_get_resp}</arg>
 <arg>${expec_multi_get_resp}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20210603 02:06:59.485" level="TRACE">Arguments: [ [{'age': 20,
+<msg timestamp="20210603 02:30:13.396" level="TRACE">Arguments: [ [{'age': 20,
   'cust_hist': [{'customerid': 44},
                 {'customerid': 44},
                 {'customerid': 44},
@@ -435,38 +405,38 @@
                 {'customerid': 69},
                 {'customerid': 69}]},
  {'age': 20, 'cust_hist': []}] | "[{'age': 20, 'cust_hist': [{'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}, {'customerid': 44}]}, {'age': 19, 'cust_hist': []}, {'age': 20, 'cust_hist': [{'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}, {'customerid': 69}]}, {'age': 20, 'cust_hist': []}]" ]</msg>
-<msg timestamp="20210603 02:06:59.486" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.487" level="INFO">Argument types are:
+<msg timestamp="20210603 02:30:13.396" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.397" level="INFO">Argument types are:
 &lt;class 'list'&gt;
 &lt;type 'unicode'&gt;</msg>
-<msg timestamp="20210603 02:06:59.487" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.485" endtime="20210603 02:06:59.487"/>
+<msg timestamp="20210603 02:30:13.397" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.395" endtime="20210603 02:30:13.397"/>
 </kw>
-<msg timestamp="20210603 02:06:59.487" level="TRACE">Return: None</msg>
+<msg timestamp="20210603 02:30:13.397" level="TRACE">Return: None</msg>
 <timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.485" endtime="20210603 02:06:59.487"/>
-</kw>
-<kw name="Test Teardown" library="resource" type="TEARDOWN">
-<msg timestamp="20210603 02:06:59.487" level="TRACE">Arguments: [  ]</msg>
-<kw name="Delete All Sessions" library="Inq">
-<msg timestamp="20210603 02:06:59.487" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210603 02:06:59.488" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
-<msg timestamp="20210603 02:06:59.488" level="INFO">Deleting All Sessions</msg>
-<msg timestamp="20210603 02:06:59.488" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210603 02:06:59.487" endtime="20210603 02:06:59.489"/>
-</kw>
-<msg timestamp="20210603 02:06:59.489" level="TRACE">Return: None</msg>
-<timeout value="500 milliseconds"/>
-<status status="PASS" starttime="20210603 02:06:59.487" endtime="20210603 02:06:59.489"/>
+<status status="PASS" starttime="20210603 02:30:13.395" endtime="20210603 02:30:13.397"/>
 </kw>
 <doc>Отправляет на PgSQL сервер один GET-запрос для двух таблиц</doc>
 <timeout value="2 seconds"/>
-<status status="PASS" starttime="20210603 02:06:59.451" endtime="20210603 02:06:59.489"/>
+<status status="PASS" starttime="20210603 02:30:13.368" endtime="20210603 02:30:13.397"/>
 </test>
+<kw name="Suite Teardown" library="resource" type="TEARDOWN">
+<msg timestamp="20210603 02:30:13.398" level="TRACE">Arguments: [  ]</msg>
+<kw name="Delete All Sessions" library="Inq">
+<msg timestamp="20210603 02:30:13.398" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210603 02:30:13.398" level="DEBUG">Keyword timeout 500 milliseconds active. 0.499 seconds left.</msg>
+<msg timestamp="20210603 02:30:13.398" level="INFO">Deleting All Sessions</msg>
+<msg timestamp="20210603 02:30:13.398" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210603 02:30:13.398" endtime="20210603 02:30:13.398"/>
+</kw>
+<msg timestamp="20210603 02:30:13.399" level="TRACE">Return: None</msg>
+<timeout value="500 milliseconds"/>
+<status status="PASS" starttime="20210603 02:30:13.398" endtime="20210603 02:30:13.399"/>
+</kw>
 <meta name="Автор">Шер Игорь</meta>
-<status status="PASS" starttime="20210603 02:06:59.155" endtime="20210603 02:06:59.489"/>
+<status status="PASS" starttime="20210603 02:30:13.065" endtime="20210603 02:30:13.399"/>
 </suite>
-<status status="PASS" starttime="20210603 02:06:59.139" endtime="20210603 02:06:59.489"/>
+<status status="PASS" starttime="20210603 02:30:13.037" endtime="20210603 02:30:13.399"/>
 </suite>
 <statistics>
 <total>
