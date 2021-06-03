@@ -4,12 +4,8 @@ ${multiget_doc}    Отправляет на PgSQL сервер один GET-з�
 *** Variables ***
 ${get_resp}
 ${ids}
-*** Settings ***
-Library    JsonValidator
-Library    RequestsLibrary     WITH NAME    Req
-Library    postgrest.Postgrest       WITH NAME    Rest
-Library    sql.Sql    WITH NAME    Sql
-Library    comparison    WITH NAME    Comp
+*** Setting ***
+Resource    libs.robot
 *** Keywords ***
 Suite Setup
     [Timeout]    0.5s
