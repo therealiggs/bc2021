@@ -4,7 +4,7 @@ ${multiget_doc}    Отправляет на PgSQL сервер один GET-з�
 *** Variables ***
 ${get_resp}
 ${ids}
-*** Setting ***
+*** Settings ***
 Resource    libs.robot
 *** Keywords ***
 Suite Setup
