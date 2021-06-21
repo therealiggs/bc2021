@@ -14,7 +14,6 @@ Suite Setup
 Send GET inquiry with IMSI
     [Arguments]    ${args}
     [Timeout]    0.5s
-    [Tags]    inquiry    get
 
     ${get resp}    Sender.send sock request    ${args}
     set global variable    ${get_resp}
@@ -22,13 +21,11 @@ Send GET inquiry with IMSI
 Resp should be
     [Arguments]    ${args}
     [Timeout]    0.3s
-    [Tags]    validation
 
     should be equal as strings    ${get_resp}    ${args}
 
 Send GET inquiry with large IMSI
     [Timeout]    0.5s
-    [Tags]    inquiry    get    load
     ${large_imsi}    evaluate    'a'*100000
     ${get_resp}    Sender.send sock request    ${large_imsi}
     set global variable    ${get_resp}
